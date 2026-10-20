@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="default">
+  <main class="app">
+    <header class="top">
+      <h1>Weather Dashboard</h1>
+      <button id="unitBtn" class="unit-btn" type="button" aria-label="Switch units">°C</button>
+    </header>
+
+    <div class="search">
+      <input id="cityInput" type="text" placeholder="Search a city, e.g. Tokyo" autocomplete="off">
+      <button id="searchBtn" type="button">Search</button>
+    </div>
+
+    <div id="loader" class="loader hidden" role="status">
+      <div class="spinner"></div>
+      <p>Fetching weather...</p>
+    </div>
+
+    <div id="error" class="error hidden" role="alert"></div>
+
+    <section id="result" class="hidden">
+      <div class="card current">
+        <div class="place">
+          <h2 id="cityName"></h2>
+          <p id="localTime" class="muted"></p>
+        </div>
+        <div class="now">
+          <span id="icon" class="icon"></span>
+          <div>
+            <p id="temp" class="temp"></p>
+            <p id="condition" class="condition"></p>
+            <p id="feels" class="muted"></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="card stat"><span class="label">Humidity</span><span id="humidity" class="value"></span></div>
+        <div class="card stat"><span class="label">Wind</span><span id="wind" class="value"></span></div>
+        <div class="card stat"><span class="label">Pressure</span><span id="pressure" class="value"></span></div>
+      </div>
+
+      <h3 class="section-title">5-day forecast</h3>
+      <div id="forecast" class="forecast"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
